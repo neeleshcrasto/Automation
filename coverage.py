@@ -100,7 +100,7 @@ with open('C:\\Users\\ncrasto\\Desktop\\SiteFinUpload\\rawdata.json', 'r') as re
         # Publish the thing finally
         browser.find_element_by_xpath('//*[@id="contentViewInsertDialog_ctl00_ctl00_contentView_listsBackendInsertItem_ctl00_ctl00_ctl01_ctl00_ctl00_actionsContainer_Publish"]/span').click()
         browser.implicitly_wait(360)
-        time.sleep(360)
+        time.sleep(240)
         # browser.switch_to.default_content()
         # element = browser.find_element_by_xpath('//*[@id="TC79564B7002_ctl00_ctl00_logoutButton"]')
         # browser.execute_script("arguments[0].click();", element)
