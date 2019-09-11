@@ -86,11 +86,11 @@ with open('C:\\Users\\ncrasto\\Desktop\\SiteFinUpload\\rawdata.json', 'r') as re
         iframe = browser.find_element_by_xpath('//*[@id="RadWindowWrapper_lstItmsCntView_itemsBackendList_ctl00_ctl00_itemsTreeTable_ctl00_ctl00_createItem"]/table/tbody/tr[2]/td[2]/iframe')
         browser.switch_to.frame(iframe)
 
-        dt = date.today()
-        dt_str = dt.strftime('%m/%d/%Y')
+        # dt = date.today()
+        # dt_str = dt.strftime('%m/%d/%Y')
         date_field = browser.find_element_by_xpath('//*[@id="contentViewInsertDialog_ctl00_ctl00_contentView_listsBackendInsertItem_ctl00_ctl00_sections_customFieldsSection_3_ctl00_3_ctl00_3_fields_3_ctl00_1_ctl00_1_ctl00_1_datePicker_1"]')        
-        date_field.send_keys(dt_str," ",hour,":20")
-        hour = hour + 1
+        date_field.send_keys(p['datetime'])
+        # hour = hour + 1
         browser.find_element_by_xpath('//*[@id="ui-datepicker-div"]/div[3]/button[2]').click()
         place = browser.find_element_by_xpath('//*[@id="contentViewInsertDialog_ctl00_ctl00_contentView_listsBackendInsertItem_ctl00_ctl00_sections_customFieldsSection_3_ctl00_3_ctl00_3_fields_3_ctl00_2_ctl00_2_ctl00_2_textBox_write_2"]')
         place.send_keys(p['place'])
