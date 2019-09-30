@@ -38,6 +38,7 @@ with open('C:\\Users\\ncrasto\\Desktop\\SiteFinUpload\\rawdata.json', 'r') as re
         browser.switch_to.frame(iframe)
 
         # Input Form has opened, below code inserts content into the form
+        time.sleep(60)
         title = browser.find_element_by_xpath('//*[@id="contentViewInsertDialog_ctl00_ctl00_contentView_listsBackendInsertItem_ctl00_ctl00_sections_mainSection_0_ctl00_0_ctl00_0_fields_0_titleField_0_ctl00_0_ctl00_0_textBox_write_0"]')
         title.send_keys(p['title'])
         title2 = browser.find_element_by_xpath('//*[@id="contentViewInsertDialog_ctl00_ctl00_contentView_listsBackendInsertItem_ctl00_ctl00_sections_customFieldsSection_3_ctl00_3_ctl00_3_fields_3_ctl00_7_ctl00_7_ctl00_7_textBox_write_7"]')
@@ -100,7 +101,7 @@ with open('C:\\Users\\ncrasto\\Desktop\\SiteFinUpload\\rawdata.json', 'r') as re
         # Publish the thing finally
         browser.find_element_by_xpath('//*[@id="contentViewInsertDialog_ctl00_ctl00_contentView_listsBackendInsertItem_ctl00_ctl00_ctl01_ctl00_ctl00_actionsContainer_Publish"]/span').click()
         browser.implicitly_wait(360)
-        time.sleep(240)
+        time.sleep(300)
         # browser.switch_to.default_content()
         # element = browser.find_element_by_xpath('//*[@id="TC79564B7002_ctl00_ctl00_logoutButton"]')
         # browser.execute_script("arguments[0].click();", element)
