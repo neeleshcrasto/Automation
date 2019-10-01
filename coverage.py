@@ -8,6 +8,18 @@ from selenium.webdriver.support import expected_conditions as EC
 from datetime import date
 import json
 import time
+import fetch
+
+fetch.getinf()
+
+print('Data has been entered into the JSON file. Enter and verify all details in JSON file')
+
+proceed = input('Once completed, press Y: ')
+while proceed != 'y':
+    if proceed == 'y':
+        break
+    proceed = input('Incorrect input. Try again: ')
+
 
 # Provides location of ChromeDriver and assigns variable to chromedriver
 chromedriver = 'C:\Chromed\chromedriver.exe'
