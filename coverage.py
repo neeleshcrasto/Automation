@@ -38,25 +38,36 @@ username.send_keys('Neelesh')
 password.send_keys('Neelesh@2018')
 browser.find_element_by_xpath('//*[@id="LoginFormControl"]/div[4]/a/strong').click()
 
+browser.find_element_by_xpath('//*[@id="MainMenu"]/ul/li[3]/a').click()
+browser.find_element_by_xpath('//*[@id="MainMenu"]/ul/li[3]/div/ul/li[4]/a').click()
+time.sleep(5)
+# for links in find_element_by_xpath('/html/body/form/div[3]/div[2]/div[1]/div[1]/div[4]/div[3]/div[2]/table/tbody/tr'):
+#     text = 
+elem = browser.find_element_by_link_text("NewsCurrent")
+elem.click()
+# browser.find_element_by_xpath('//*[@id="lstsCntView_listsBackendList_ctl00_ctl00_itemsGrid_ctl00_ctl00_grid_ctl00__0"]/td[2]/div/span/a').click()
+# /html/body/form/div[3]/div[2]/div[1]/div[1]/div[4]/div[3]/div[2]/table/tbody/tr
+
 with open('C:\\Users\\ncrasto\\Desktop\\SiteFinUpload\\rawdata.json', 'r') as readfile:
     data = json.load(readfile)
     hour = 13
     for p in data["list"]:
 
-        browser.find_element_by_xpath('//*[@id="MainMenu"]/ul/li[3]/a/span').click()
-        browser.find_element_by_xpath('//*[@id="MainMenu"]/ul/li[3]/div/ul/li[4]/a').click()
-        time.sleep(5)
-        browser.find_element_by_xpath('//*[@id="lstsCntView_listsBackendList_ctl00_ctl00_itemsGrid_ctl00_ctl00_grid_ctl00__0"]/td[2]/div/span/a').click()
+        # browser.find_element_by_xpath('//*[@id="MainMenu"]/ul/li[3]/a').click()
+        # browser.find_element_by_xpath('//*[@id="MainMenu"]/ul/li[3]/div/ul/li[4]/a').click()
+        # time.sleep(5)
+        # browser.find_element_by_xpath('//*[@id="lstsCntView_listsBackendList_ctl00_ctl00_itemsGrid_ctl00_ctl00_grid_ctl00__0"]/td[2]/div/span/a').click()
         # browser.get('https://jmfl.com/Sitefinity/Content/Lists/ListItems/newscurrent/?provider=OpenAccessDataProvider')
 
-        browser.implicitly_wait(120)
+        browser.switch_to.default_content()
+        browser.implicitly_wait(90)
         browser.find_element_by_xpath('//*[@id="lstItmsCntView_itemsBackendList_ctl00_ctl00_toolbar_createItemWidget_ctl00_ctl00_buttonText"]').click()
 
         iframe = browser.find_element_by_xpath('//*[@id="RadWindowWrapper_lstItmsCntView_itemsBackendList_ctl00_ctl00_itemsTreeTable_ctl00_ctl00_createItem"]/table/tbody/tr[2]/td[2]/iframe')
         browser.switch_to.frame(iframe)
 
         # Input Form has opened, below code inserts content into the form
-        time.sleep(60)
+        time.sleep(30)
         title = browser.find_element_by_xpath('//*[@id="contentViewInsertDialog_ctl00_ctl00_contentView_listsBackendInsertItem_ctl00_ctl00_sections_mainSection_0_ctl00_0_ctl00_0_fields_0_titleField_0_ctl00_0_ctl00_0_textBox_write_0"]')
         title.send_keys(p['title'])
         title2 = browser.find_element_by_xpath('//*[@id="contentViewInsertDialog_ctl00_ctl00_contentView_listsBackendInsertItem_ctl00_ctl00_sections_customFieldsSection_3_ctl00_3_ctl00_3_fields_3_ctl00_7_ctl00_7_ctl00_7_textBox_write_7"]')
