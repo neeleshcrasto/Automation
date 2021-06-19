@@ -1,2 +1,3 @@
-# JMjunk
-Automated jobs at JM
+# Workflow Automation
+
+Automated jobs using Selenium
