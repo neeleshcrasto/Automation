@@ -36,8 +36,8 @@ browser.get('https://www.jmfl.com/Sitefinity/Authenticate/SWT?realm=https%3a%2f%
 # Login to the website and navigate to the page to be updated
 username = browser.find_element_by_xpath('//*[@id="wrap_name"]')
 password = browser.find_element_by_xpath('//*[@id="wrap_password"]')
-username.send_keys('Neelesh')
-password.send_keys('Neelesh@2018')
+username.send_keys('')
+password.send_keys('')
 browser.find_element_by_xpath('//*[@id="LoginFormControl"]/div[4]/a/strong').click()
 
 try:
